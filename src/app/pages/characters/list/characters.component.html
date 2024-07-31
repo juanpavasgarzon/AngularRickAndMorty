@@ -1,0 +1,41 @@
+@if (isLoading) {
+  <div class="card-container">
+    <mat-progress-spinner mode="indeterminate"/>
+  </div>
+} @else {
+  <div class="character-actions">
+    <button
+      mat-raised-button
+      (click)="onPreviousPage()"
+      color="primary"
+      [disabled]="!info.prev"
+    >
+      Previous
+      <mat-icon>
+        arrow_back_ios
+      </mat-icon>
+    </button>
+    <button
+      mat-raised-button
+      (click)="onNextPage()"
+      color="primary"
+      [disabled]="!info.next"
+    >
+      Next
+      <mat-icon>
+        arrow_forward_ios
+      </mat-icon>
+    </button>
+  </div>
+  <div class="pagination-information">
+    Page {{ page }} Of {{ info.pages }}. Registers {{ info.count }}
+  </div>
+  <div class="card-container">
+    <app-card
+      *ngFor="let value of characters"
+      [image]="value.image"
+      [name]="value.name"
+    />
+  </div>
+}
+

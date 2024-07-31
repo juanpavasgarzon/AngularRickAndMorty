@@ -1,0 +1,10 @@
+.character-card {
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+}
+
+.full-width {
+  width: 92%;
+  margin: 10px;
+}
